@@ -1,21 +1,26 @@
 # ---------------------------------------------------------------------
-# Streamlit configuration for the GeekMAN companion site.
-# Theme values picked to match the original streamlit.app deployment
-# (deep crimson accent on a clean white background).
+# GeekMAN — Streamlit theme.
+#
+# A warm, light, professional palette:
+#   - background        : #FAF7F2 (warm cream)
+#   - surfaces / inputs : #FFFFFF
+#   - primary accent    : #1E40AF (rich, professional navy-blue)
+#   - text              : #111827 (warm charcoal, easier on eyes than pure black)
 # ---------------------------------------------------------------------
 
 [theme]
-base               = "light"
-primaryColor       = "#C8102E"
-backgroundColor    = "#FFFFFF"
-secondaryBackgroundColor = "#F8F9FA"
-textColor          = "#1F2937"
-font               = "sans serif"
+base                       = "light"
+primaryColor               = "#1E40AF"
+backgroundColor            = "#FAF7F2"
+secondaryBackgroundColor   = "#FFFFFF"
+textColor                  = "#111827"
+font                       = "sans serif"
 
 [server]
-# Streamlit Community Cloud also lifts uploads to ~200MB, but we limit
-# locally to keep memory predictable.
 maxUploadSize = 50
 
 [browser]
 gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
