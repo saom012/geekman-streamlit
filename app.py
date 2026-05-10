@@ -27,9 +27,15 @@ from geekman import (
 # Page setup                                                                  #
 # --------------------------------------------------------------------------- #
 
+# Resolve the favicon path relative to this file so it works regardless of
+# the directory `streamlit run` is invoked from. If the file is missing for
+# any reason we fall back to a unicode glyph rather than crash on launch.
+_FAVICON_PATH = Path(__file__).parent / "resources" / "favicon.png"
+_PAGE_ICON: object = str(_FAVICON_PATH) if _FAVICON_PATH.exists() else "🧬"
+
 st.set_page_config(
     page_title="GeekMAN — Username Matching Across Online Networks",
-    page_icon="🧬",
+    page_icon=_PAGE_ICON,
     layout="centered",
     initial_sidebar_state="collapsed",
     menu_items={
